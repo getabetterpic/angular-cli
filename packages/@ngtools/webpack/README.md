@@ -2,6 +2,8 @@
 
 Webpack plugin that AoT compiles your Angular components and modules.
 
+This is a fork of @ngtools/webpack that allows for multiple entry modules.
+
 ## Usage
 
 In your webpack config, add the following plugin and loader.
@@ -24,32 +26,10 @@ exports = { /* ... */
   plugins: [
     new AngularCompilerPlugin({
       tsConfigPath: 'path/to/tsconfig.json',
-      entryModule: 'path/to/app.module#AppModule',
-      sourceMap: true
-    })
-  ]
-}
-```
-
-Angular version 2 and 4, use `AotPlugin`:
-
-```typescript
-import {AotPlugin} from '@ngtools/webpack'
-
-exports = { /* ... */
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        loader: '@ngtools/webpack'
-      }
-    ]
-  },
-
-  plugins: [
-    new AotPlugin({
-      tsConfigPath: 'path/to/tsconfig.json',
-      entryModule: 'path/to/app.module#AppModule',
+      entryModule: [
+        'path/to/app.module#AppModule',
+        'path/to/another.module#AnotherModule'
+      ],
       sourceMap: true
     })
   ]
