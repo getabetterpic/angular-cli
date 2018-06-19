@@ -145,8 +145,7 @@ export function CompilerCliIsSupported() {
   }
 
   // Throw if we're neither 2.3.1 or more, nor 4.x.y, nor 5.x.y.
-  if (!(version.major == '5'
-    || version.major == '4'
+  if (!(parseInt(version.major, 10) >= 4
     || (version.major == '2'
       && (version.minor == '4'
         || version.minor == '3' && version.patch == '1')))) {
