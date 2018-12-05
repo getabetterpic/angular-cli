@@ -6,7 +6,7 @@ import { satisfies } from 'semver';
 // See https://github.com/angular/angular-cli/issues/8107#issuecomment-338185872
 try {
   const version = require('typescript').version;
-  if (!satisfies(version, '^2.0.2')) {
+  if (!satisfies(version, '^2.0.2 || ^3.1.0')) {
     throw new Error();
   }
 } catch (e) {

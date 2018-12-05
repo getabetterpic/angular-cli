@@ -1,6 +1,6 @@
 {
   "name": "hydra-ngtools-webpack",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Fork of @ngtools/webpack that allows multiple entry modules.",
   "main": "./src/index.js",
   "typings": "src/index.d.ts",
